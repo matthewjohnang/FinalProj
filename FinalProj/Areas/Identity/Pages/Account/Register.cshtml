@@ -1,0 +1,85 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+@{
+    Layout = "/Views/Shared/_LayoutLogin.cshtml";
+}
+
+
+
+<div class="limiter">
+    <div class="container-login100 ">
+        <div class="wrap-signup100">
+            <form class="signup100-form validate-form bg" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <span class="login100-form-title p-b-34">
+                    Create a new account.
+                </span>
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="wrap-input100 validate-input m-b-20">
+                    <input asp-for="Input.FirstName" class="input100" placeholder="First Name" autofocus />
+                </div>
+                <div class="wrap-input100 validate-input m-b-20">
+                    <input asp-for="Input.LastName" class="input100" placeholder="Last Name" />
+                </div>
+                <div class="wrap-input100 validate-input m-b-20">
+                    <input asp-for="Input.PhoneNumber" class="input100" placeholder="Phone Number" />
+                </div>
+                @*<div class="wrap-input100 validate-input m-b-20">
+                        <input asp-for="Input.Street" class="input100" placeholder="Street" />
+                        <span asp-validation-for="Input.Street" class="text-danger" autofocus></span>
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-20">
+                        <input asp-for="Input.City" class="input100" placeholder="City" />
+                        <span asp-validation-for="Input.City" class="text-danger" autofocus></span>
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-20">
+                        <input asp-for="Input.Province" class="input100" placeholder="Province" />
+                        <span asp-validation-for="Input.Province" class="text-danger" autofocus></span>
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-20">
+                        <input asp-for="Input.PostalCode" class="input100" placeholder="Postal Code" />
+                        <span asp-validation-for="Input.PostalCode" class="text-danger" autofocus></span>
+                    </div>*@
+                <div class="wrap-input100 validate-input m-b-20">
+                    <input asp-for="Input.Email" class="input100" placeholder="Email Address" />
+                </div>
+                <div class="wrap-input100 validate-input m-b-20">
+                    <input asp-for="Input.Password" class="input100" placeholder="Password" />
+                </div>
+                <div class="wrap-input100 validate-input m-b-20">
+                    <input asp-for="Input.ConfirmPassword" class="input100" placeholder="Confirm Password" />
+                </div>
+
+                <div class="container-login100-form-btn p-b-40">
+                    <button type="submit" class="login100-form-btn">
+                        Register
+                    </button>
+                </div>
+
+
+                @*<div class="checkbox w-full text-left ">
+                        <label asp-for="Input.RememberMe">
+                            <input asp-for="Input.RememberMe" />
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        </label>
+                    </div>*@
+
+                <div class="w-full text-center">
+                    <span class="txt1">
+                        Already have an account?
+                    </span>
+                    <p>
+                        <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl" class="txt2">Sign In</a>
+                    </p>
+                </div>
+            </form>
+            <div class="login100-more" style="background-image: url('/lib/img/login_bg.gif');"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

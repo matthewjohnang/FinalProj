@@ -1,0 +1,62 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+@{
+    Layout = "/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="limiter">
+    <div class="container-login100 ">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form bg" id="account" method="post">
+                <span class="login100-form-title p-b-34">
+                    Account Login
+                </span>
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="wrap-input100 validate-input m-b-20">
+                    <input asp-for="Input.Email" class="input100" placeholder="Username" autofocus />
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-20">
+                    <input asp-for="Input.Password" class="input100" placeholder="Password" />
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <button type="submit" class="login100-form-btn">
+                        Sign in
+                    </button>
+                </div>
+
+
+                @*<div class="checkbox w-full text-left ">
+                        <label asp-for="Input.RememberMe">
+                            <input asp-for="Input.RememberMe" />
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        </label>
+                    </div>*@
+                <div class="txt2 w-full text-center p-t-27 p-b-100">
+                    <a id="forgot-password" asp-page="./ForgotPassword">Forgot your username or password?</a>
+                </div>
+
+
+                <div class="w-full text-center">
+                    <span class="txt1">
+                        Don't have an account?
+                    </span>
+                    <p>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="txt2">Signup</a>
+                    </p>
+                </div>
+            </form>
+            <div class="login100-more" style="background-image: url('/lib/img/login_bg.gif');"></div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
