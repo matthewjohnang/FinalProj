@@ -2,7 +2,8 @@
 ComIT Final Project
 
 # Task Management System
-A CRUD web application project using .NET Core MVC framework.  
+A CRUD web application project using .NET Core MVC framework which focuses on managing tasks efficiently and effectively.
+
 
 # Author
 Matthew John Ang
