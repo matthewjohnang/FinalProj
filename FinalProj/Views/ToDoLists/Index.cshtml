@@ -1,0 +1,37 @@
+﻿@model IEnumerable<FinalProj.Models.ToDoList>
+
+@{
+    ViewData["Title"] = "Announcement Page";
+    Layout = "~/Views/Shared/_LayoutNote.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<br />
+<h1 class="text-center">To Do List Today</h1>
+<hr />
+<div id="myModal" class="modal" data-url='@Url.Action("Create","ToDoLists")'>
+</div>
+<div>
+    <ol>
+        @foreach (var item in Model)
+        {
+            <li><a asp-action="Edit" asp-route-id="@item.ID"><b>Title: @item.Title</b><br /> Description: @item.Description<br />Priority: @item.Priority<br /> Status: @item.Status</a></li>
+        }
+        <a class="btn-block ">
+            <img src="~/lib/img/addsign.png" alt="Sample Image" width="180px" />
+        </a>
+    </ol>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.btn-block').click(function () {
+            var url = $('#myModal').data('url');
+            $.get(url, function (data) {
+                $("#myModal").html(data);
+                $("#myModal").modal('show');
+            });
+        });
+    });
+</script>
+

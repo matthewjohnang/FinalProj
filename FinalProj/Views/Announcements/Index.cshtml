@@ -1,0 +1,73 @@
+﻿@model IEnumerable<FinalProj.Models.Announcement>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<br />
+<h1 class="text-center">Announcements</h1>
+<hr />
+@if (User.IsInRole("Admin"))
+{
+    <div style="text-align:center;padding:0px 80px;text-align: justify;">
+    <button type="button" class="btn-block btn btn-primary float-right" style="width:auto; "><b>+</b> Announcement</button>
+    </div>
+}
+else
+{
+}
+
+<div id="myModal" class="modal" data-url='@Url.Action("Create","Announcements")'>
+</div>
+
+@foreach (var item in Model)
+{
+    <div style="text-align:center;padding:50px 80px;text-align: justify;">
+        <h1>@Html.DisplayFor(modelItem => item.Title)</h1>
+        <h5>By: Admin</h5>
+        <h6>Posted on @Html.DisplayFor(modelItem => item.Date)</h6>
+
+        <br />
+        @Html.DisplayFor(modelItem => item.Body)
+
+        <br />
+    </div>
+    <hr />
+
+    @if (User.IsInRole("Admin"))
+    {
+    <div class="float-right" style="text-align:center;padding:0px 80px;text-align: justify;">
+        <a asp-action="Edit" asp-route-id="@item.ID" c;a>Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+    </div>
+    }
+    else
+    {
+    }
+
+
+}
+       <div style="padding-bottom:200px"></div>
+
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.Message");
+        };
+    </script>
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.btn-block').click(function () {
+            var url = $('#myModal').data('url');
+            $.get(url, function (data) {
+                $("#myModal").html(data);
+                $("#myModal").modal('show');
+            });
+        });
+    });
+</script>

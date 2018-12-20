@@ -1,0 +1,143 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    Layout = null;
+}
+
+@*<div class="text-center">
+        <h1 class="display-4">TEST</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font: 400 15px/1.8 "Lato", sans-serif;
+            color: #777;
+        }
+
+        .bgimg-1,
+        .bgimg-2,
+        .bgimg-3 {
+            position: relative;
+            filter: grayscale(10%);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .bgimg-1 {
+            background-image: url(/lib/img/homebg1.jpg);
+            min-height: 100%;
+        }
+
+        .bgimg-2 {
+            background-image: url(/lib/img/homebg2.png);
+            min-height: 400px;
+        }
+
+        .bgimg-3 {
+            background-image: url(/lib/img/homebg3.png);
+            min-height: 400px;
+        }
+
+        .caption {
+            position: absolute;
+            left: 0;
+            top: 35%;
+            width: 100%;
+            text-align: center;
+            color: #000;
+        }
+
+            .caption span.border {
+                background-color: #00ad5f;
+                color: #fff;
+                padding: 18px;
+                font-size: 25px;
+                letter-spacing: 8px;
+            }
+
+        h3 {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font: 20px "Lato", sans-serif;
+            color: #111;
+        }
+
+        @@media only screen and (max-device-width: 1024px) {
+            .bgimg-1,
+            .bgimg-2,
+            .bgimg-3 {
+                background-attachment: scroll;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="bgimg-1">
+        <div class="caption">
+            <span class="border">TASK MANAGEMENT SYSTEM</span><br /><br />
+            <span class="border"><a href="Identity/Account/Login" style="text-decoration: none; color: white; letter-spacing: 3px; font-size: 18px;" >Get Started</a></span>
+        </div>
+    </div>
+
+
+
+    <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+        <h3 style="text-align:center;">a daily task & team collaboration software </h3>
+    </div>
+
+    <div class="bgimg-2">
+        <div class="caption">
+            <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">PLAN FOR ANYTHING</span>
+        </div>
+    </div>
+
+    <div style="position:relative;">
+        <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+            <p>
+                Organize and save your to-do, work, grocery, movies and household lists. No matter what you’re planning, how big or small the task may be, Task Management System (TMS) makes it super easy to get stuff done.
+            </p>
+        </div>
+    </div>
+
+    <div class="bgimg-3">
+        <div class="caption">
+            <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">GET REMINDED ANYTIME</span>
+        </div>
+    </div>
+
+    <div style="position:relative;">
+        <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+            <p>
+                Post Announcements and Assign to-dos. No matter whether your lists are work related or just for fun, you will never miss a deadline again with Task Management System (TMS) in charge.
+            </p>
+        </div>
+    </div>
+
+
+    
+
+    <div class="bgimg-1">
+        <div class="caption">
+            <span class="border">BUY NOW!</span>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
